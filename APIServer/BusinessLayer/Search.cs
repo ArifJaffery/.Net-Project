@@ -91,7 +91,7 @@ namespace BusinessLayer
 
         private List<People> getPeoplesByNameAndGenderFilter(string name,string gender)
         {
-            return data.people.FindAll(p => p.name.ToLower() == name.ToLower() && p.gender.ToLower()==gender.ToLower());
+            return data.people.FindAll(p => p.name.ToLower().Contains(name.ToLower()) && p.gender.ToLower()==gender.ToLower());
         }
 
         public IEnumerable<BusinessModels.Results> SimpleSearch(BusinessModels.Search searchparam)
@@ -107,12 +107,17 @@ namespace BusinessLayer
             List<DataAccessLayer.People> peoples;
 
             if (searchparam.male)
-                peoples=getPeoplesByNameAndGenderFilter(searchparam.name, "M");
+                peoples = getPeoplesByNameAndGenderFilter(searchparam.name, "M");
             else if (searchparam.female)
-                peoples=getPeoplesByNameAndGenderFilter(searchparam.name, "F");
+                peoples = getPeoplesByNameAndGenderFilter(searchparam.name, "F");
             else
-                peoples=data.people.FindAll(p => p.name.ToLower() == searchparam.name.ToLower());
+            {
+                if (searchparam.name.Trim() != "")
+                    return data.people.FindAll(p => p.name.ToLower().Contains( searchparam.name.ToLower()));
+                else
+                    return data.people;
 
+            }
             return peoples;
 
         }

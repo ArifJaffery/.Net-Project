@@ -14,9 +14,8 @@ namespace APIServer.Controllers
 {
     public class SearchController : ApiController
     {
-        //private Models.MockData data= JsonConvert.DeserializeObject<Models.MockData>(File.ReadAllText("data_small.json"));
-        // GET api/values
         private BusinessLayer.Search search = new BusinessLayer.Search();
+        private int rowscount = 10;
 
         public IEnumerable<string> Get()
         {
@@ -27,9 +26,9 @@ namespace APIServer.Controllers
         public IEnumerable<BusinessModels.Results> Post([FromBody] BusinessModels.Search searchparam)
         {
             if (searchparam.type == "Simple")
-                return this.search.SimpleSearch(searchparam);
+                return this.search.SimpleSearch(searchparam).Take(this.rowscount);
             else if (searchparam.type == "Advance")
-                return this.search.AdvanceSearch(searchparam);
+                return this.search.AdvanceSearch(searchparam).Take(this.rowscount);
             else
                 return new List<BusinessModels.Results>();
         }

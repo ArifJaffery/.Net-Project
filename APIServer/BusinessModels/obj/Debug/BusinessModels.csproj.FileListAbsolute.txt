@@ -5,3 +5,4 @@ C:\demos\.net\api\APIServer\BusinessModels\obj\Debug\BusinessModels.dll
 C:\demos\.net\api\APIServer\BusinessModels\obj\Debug\BusinessModels.pdb
 C:\demos\.net\api\APIServer\BusinessModels\bin\Debug\Newtonsoft.Json.dll
 C:\demos\.net\api\APIServer\BusinessModels\bin\Debug\Newtonsoft.Json.xml
+C:\demos\.net\api\APIServer\BusinessModels\obj\Debug\BusinessModels.csprojResolveAssemblyReference.cache
