@@ -1,0 +1,20 @@
+{
+  "places": [
+    {
+      "id": 0,
+      "name": "City of Melbourne"
+    },
+    {
+      "id": 1,
+      "name": "Carlton 3053 "
+    },
+    {
+      "id": 2,
+      "name": "Carlton North 3054 (Shared with City of Yarra) "
+    },
+    {
+      "id": 3,
+      "name": "East Melbourne 3002 "
+    }
+  ]
+}

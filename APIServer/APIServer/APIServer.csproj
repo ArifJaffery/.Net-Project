@@ -242,6 +242,10 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\BusinessLayer\BusinessLayer.csproj">
+      <Project>{739aa7ea-9904-4e6f-b359-aaf83829d14f}</Project>
+      <Name>BusinessLayer</Name>
+    </ProjectReference>
     <ProjectReference Include="..\BusinessModels\BusinessModels.csproj">
       <Project>{eb21395e-8c76-4186-acd9-2dfc1c683122}</Project>
       <Name>BusinessModels</Name>
