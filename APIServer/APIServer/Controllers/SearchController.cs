@@ -24,9 +24,12 @@ namespace APIServer.Controllers
         }
 
 
-        public IEnumerable<DataAccessLayer.People> Post([FromBody] BusinessModels.Search searchparam)
+        public IEnumerable<BusinessModels.Results> Post([FromBody] BusinessModels.Search searchparam)
         {
-            return this.search.SimpleSearch(searchparam);          
+            //   return this.search.SimpleSearch(searchparam);  
+            return this.search.AdvanceSearch(searchparam);
+
+            
         }
 
         public void Put(int id, [FromBody]string value)

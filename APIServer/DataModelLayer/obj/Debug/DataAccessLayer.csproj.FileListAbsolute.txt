@@ -3,3 +3,4 @@ C:\demos\.net\api\APIServer\DataModelLayer\bin\Debug\DataModelLayer.dll
 C:\demos\.net\api\APIServer\DataModelLayer\bin\Debug\DataModelLayer.pdb
 C:\demos\.net\api\APIServer\DataModelLayer\obj\Debug\DataModelLayer.dll
 C:\demos\.net\api\APIServer\DataModelLayer\obj\Debug\DataModelLayer.pdb
+C:\demos\.net\api\APIServer\DataModelLayer\obj\Debug\DataAccessLayer.csprojResolveAssemblyReference.cache

@@ -8,10 +8,10 @@ namespace BusinessModels
 {
     public class Results
     {
-        long id { get; set; }
-        string name { get; set; }
-        string gender { get; set; }
-        string birthplace { get; set; }
+        public long id { get; set; }
+        public string name { get; set; }
+        public string gender { get; set; }
+        public string birthplace { get; set; }
 
     }
 }
