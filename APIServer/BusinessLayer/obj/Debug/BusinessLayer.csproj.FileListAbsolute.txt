@@ -1,0 +1,11 @@
+C:\demos\.net\api\APIServer\BusinessLayer\bin\Debug\BusinessLayer.dll
+C:\demos\.net\api\APIServer\BusinessLayer\bin\Debug\BusinessLayer.pdb
+C:\demos\.net\api\APIServer\BusinessLayer\obj\Debug\BusinessLayer.csproj.CoreCompileInputs.cache
+C:\demos\.net\api\APIServer\BusinessLayer\obj\Debug\BusinessLayer.dll
+C:\demos\.net\api\APIServer\BusinessLayer\obj\Debug\BusinessLayer.pdb
+C:\demos\.net\api\APIServer\BusinessLayer\bin\Debug\BusinessModels.dll
+C:\demos\.net\api\APIServer\BusinessLayer\bin\Debug\DataModelLayer.dll
+C:\demos\.net\api\APIServer\BusinessLayer\bin\Debug\Newtonsoft.Json.dll
+C:\demos\.net\api\APIServer\BusinessLayer\bin\Debug\BusinessModels.pdb
+C:\demos\.net\api\APIServer\BusinessLayer\bin\Debug\DataModelLayer.pdb
+C:\demos\.net\api\APIServer\BusinessLayer\obj\Debug\BusinessLayer.csprojResolveAssemblyReference.cache
