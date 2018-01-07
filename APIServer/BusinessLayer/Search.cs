@@ -14,16 +14,6 @@ namespace BusinessLayer
     public class Search
     {
         private DataAccessLayer.Mockdata data = JsonConvert.DeserializeObject<DataAccessLayer.Mockdata>(File.ReadAllText("data_small.json"));
-        /*   List<BusinessModels.Gender> genders =   new List<BusinessModels.Gender>() {
-                                                           new BusinessModels.Gender() {
-                                                               id = "M", title = "Male"
-                                                           },
-                                                           new BusinessModels.Gender() {
-                                                               id = "F", title = "Female"
-                                                           }
-                                                   };
-
-          */
 
         private IEnumerable<People> getDescendents(People person,bool isRoot)
         {
@@ -76,20 +66,28 @@ namespace BusinessLayer
             return ancestors;
         }
 
-
-
         public IEnumerable<BusinessModels.Results> AdvanceSearch(BusinessModels.Search searchparam)
         {
+
+            IEnumerable<BusinessModels.Results> results = new List<BusinessModels.Results>();
+
             List<DataAccessLayer.People> peoples = this.SearchByNameAndGender(searchparam);
-            //            List<DataAccessLayer.People> ancestors = new List<DataAccessLayer.People>();
-            //            peoples.ForEach(person => ancestors.AddRange(this.getAncestors(person)));            
-            List<DataAccessLayer.People> descendents = new List<DataAccessLayer.People>();
-            peoples.ForEach(person => descendents.AddRange(this.getDescendents(person,true)));
-            IEnumerable<BusinessModels.Results> results = this.mapFromPeopleToResult(descendents);
+            if (searchparam.direction.ToLower() == "ancestors")
+            {
+                List<DataAccessLayer.People> ancestors = new List<DataAccessLayer.People>();
+                peoples.ForEach(person => ancestors.AddRange(this.getAncestors(person)));
+                results = this.mapFromPeopleToResult(ancestors);
+
+            }
+            else if (searchparam.direction.ToLower() == "descendents")
+            {
+                List<DataAccessLayer.People> descendents = new List<DataAccessLayer.People>();
+                peoples.ForEach(person => descendents.AddRange(this.getDescendents(person, true)));
+                results = this.mapFromPeopleToResult(descendents);
+            }
+
             return results;
         }
-
-
 
         private List<People> getPeoplesByNameAndGenderFilter(string name,string gender)
         {
@@ -128,13 +126,6 @@ namespace BusinessLayer
                 gender = result.gender,
                 birthplace = this.data.places.Single(place => place.id == result.place_id).name
             });
-
-
         }
-
-
-
-
-
     }
 }

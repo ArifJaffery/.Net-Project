@@ -26,10 +26,12 @@ namespace APIServer.Controllers
 
         public IEnumerable<BusinessModels.Results> Post([FromBody] BusinessModels.Search searchparam)
         {
-            //   return this.search.SimpleSearch(searchparam);  
-            return this.search.AdvanceSearch(searchparam);
-
-            
+            if (searchparam.type == "Simple")
+                return this.search.SimpleSearch(searchparam);
+            else if (searchparam.type == "Advance")
+                return this.search.AdvanceSearch(searchparam);
+            else
+                return new List<BusinessModels.Results>();
         }
 
         public void Put(int id, [FromBody]string value)
